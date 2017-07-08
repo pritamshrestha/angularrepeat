@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	   <title>TooLists!</title>
+	   <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+	   <link rel="stylesheet" href="css/main.css">
+	   <link rel="stylesheet" href="css/bootstrap.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular-route.js"></script>
+
+</head>
+<body ng-app="myApp">
+<!-- this is the use of the ng-directives -->
+<div ng-controller="myCtrl">
+
+<!-- this is the use of the unordered list for the ng-reoeat -->
+ <ul>
+<!-- this is used to display the countries name -->
+  <li ng-repeat="country in countries">
+   {{country.name}} 
+   <!-- using the index property -->
+   index{{$index}},
+   <ol>
+   <!-- this is used to display the cities of the belonging countries -->
+    <li ng-repeat="city in country.cities">
+    {{city.name}}
+    <!-- this is for the index and parent index -->
+    parent-index{{$parent.$index}} and index{{$index}}
+
+    </li>
+   </ol>
+  </li>
+ </ul>
+
+</div>
+
+
+ 
+
+
+
+     <script src="js/app.js"></script>
+
+     <!-- this is for the jquery -->
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="js/main.js"></script>  
+     <script src="js/bootstrap.js"></script> 
+     <script src="js/your.js"></script>
+</body>
+</html>
